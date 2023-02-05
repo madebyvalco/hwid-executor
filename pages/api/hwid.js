@@ -12,5 +12,6 @@ export default function hwid(req, res) {
     }
   
   }
-  res.send(hwid[0] || "none detected")
+  if (req.query.one) return res.send(hwid[0] || "failed to detect")
+  res.status(200).json({detected: hwid})
 }
