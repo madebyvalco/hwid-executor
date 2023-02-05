@@ -12,5 +12,5 @@ export default function hwid(req, res) {
     }
   
   }
-  res.status(200).json({ detected: hwid || "none detected" })
+  res.status(200).json({ detected: hwid[0] || "none detected" })
 }
